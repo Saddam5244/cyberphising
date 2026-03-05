@@ -1,0 +1,336 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Registration Page</title>
+    <style>
+       html, body, #root{
+         width: 100%;
+         margin: 0;
+         padding: 0;
+         box-sizing: border-box;
+         background: linear-gradient(135deg, #1f1c2c, #928dab);
+       }
+        
+        .page-item {
+            justify-content: center;
+            align-items: center;
+            margin-left: 120px;
+            font-weight: bolder;
+            font-size: x-large;
+        }
+        
+        .label1 {
+            justify-content: center;
+            align-items: center;
+            margin-left: 30px;
+            margin-top: -430px;
+        }
+        
+        .input1 {
+            font-size: medium;
+        }
+        
+        .textarea1 {
+            justify-content: center;
+            align-items: center;
+            margin-left: 100px;
+            margin-top: -30px;
+            font-size: small;
+        }
+        
+        .input2 {
+            margin-left: 20px;
+            margin-top: -8px;
+            border-radius: 3px;
+            font-weight: bold;
+            font-size: x-large;
+            background-color: blue;
+            color: white;
+            width: 90%;
+            height: 35px;
+            border: none;
+        }
+        
+        strong {
+            margin-left: 200px;
+            font-size: xx-large;
+            color: blue;
+        }
+        
+        .form1 {
+            margin-top: 70px;
+            justify-content: center;
+            align-items: center;
+            border-radius: 7px;
+            background-color: white;
+            width: 450px;
+            height: 480px;
+            /* margin-left: 550px; */
+            margin: 60px auto;
+            border: 3px solid;
+            border-color: white;
+            box-shadow: 8px 8px 24px 0px rgba(66, 68, 90, 1);
+        }
+        span{
+            margin-left: 100px;
+        }
+
+        /* Tablet screens */
+@media (max-width: 1024px) {
+
+    .form1{
+        width: 70%;
+        height: auto;
+        margin: 60px auto;
+        padding: 20px;
+    }
+
+    .page-item{
+        margin-left: 0;
+        text-align: center;
+    }
+
+    .label1{
+        margin-left: 0;
+    }
+
+    .textarea1{
+        margin-left: 0;
+        width: 100%;
+    }
+
+    strong{
+        margin-left: 0;
+        text-align: center;
+        display: block;
+    }
+
+}
+
+
+/* Mobile screens */
+@media (max-width: 600px) {
+
+    .form1{
+        width: 90%;
+        margin: 40px auto;
+        height: auto;
+        padding: 20px;
+    }
+
+    .page-item{
+        font-size: 22px;
+        text-align: center;
+        margin-left: 0;
+    }
+
+    .label1{
+        display: block;
+        margin-left: 0;
+        margin-top: 10px;
+    }
+
+    .input1{
+        width: 100%;
+        margin-top: 5px;
+    }
+
+    .textarea1{
+        width: 100%;
+        margin-left: 0;
+    }
+
+    .input2{
+        width: 100%;
+        font-size: 18px;
+    }
+
+    span{
+        display: block;
+        text-align: center;
+        margin-left: 0;
+        margin-top: 10px;
+    }
+
+}
+    </style>
+</head>
+
+<body>
+
+    <form id="registerForm" class="form1" name="myform">
+        <h2 class="page-item">
+            Create an Account
+        </h2>
+        <label class="label1"  for="name">Full Name :</label>
+        <input id="name" class="input1" name="name" type="text" required placeholder="name"> <br><br>
+        <label class="label1" for="password">Password :</label>
+        <input id="password" class="input1" name="password" type="password" required placeholder="password"> <br><br>
+        <label class="label1" for="email">Email Id :</label>
+        <input id="email" class="input1" name="email" type="email" placeholder="email" required><br> <br>
+        <label class="label1" for="number">Phone Number :</label>
+        <input type="tel" id="phone"  class="input1" name="number" placeholder="number" required><br> <br>
+        <label  class="label1" for="sex">Sex :</label>
+        <input class="input1" type="radio" name="sex" value="Male">Male
+        <input class="input1" type="radio" name="sex" value="Female">Female
+        <br><br>
+        <label class="label1" for="date">Date of Birth :</label>
+
+        <select id="date" name="date">
+            <option value="">Date</option>
+            <script>
+                for(let i=1; i<=31; i++){
+                    document.write(`<option value="${i}">${i}</option>`)
+                }
+            </script>
+        </select>
+
+        <select id="month" name="month">
+            <option value="">Month</option>
+    <option value="Jan">Jan</option>
+    <option value="Feb">Feb</option>
+    <option value="March">March</option>
+    <option value="Apr">Apr</option>
+    <option value="May">May</option>
+    <option value="Jun">Jun</option>
+    <option value="Jul">Jul</option>
+    <option value="Aug">Aug</option>
+    <option value="Sep">Sep</option>
+    <option value="Oct">Oct</option>
+    <option value="Nov">Nov</option>
+    <option value="Dec">Dec</option>
+        </select>
+
+        <select id="year" name="year">
+            <option value="">Year</option>
+            <script>
+                for(let i=2000; i<=2025; i++){
+                    document.write(`<option value="${i}">${i}</option>`)
+                }
+            </script>
+        </select>
+        <br><br>
+
+        <label class="label1" for="language">Language :</label>
+        <input id="language" type="checkbox" name="lang" value="English">English
+        <input id="language" type="checkbox" name="lang" value="Hindi">Hindi
+        <input id="language" type="checkbox" name="lang" value="Telgu">Telgu
+        <input id="language" type="checkbox" name="lang" value="Tamil">Tamil
+
+        <br><br>
+
+        <label class="label1" for="address">Address :</label><br>
+        <textarea id="address" class="textarea1" name="address" cols="30" rows="4"></textarea>
+        <br><br>
+
+        <input class="input2" type="submit" value="Register">
+        <span>Already have an account ?
+            <a href="/login.html">Login</a>
+        </span>
+    </form>
+    <script>
+        function validationForm() {
+            let name = document.myform.name.value.trim();
+            let password = document.myform.password.value.trim();
+            let email = document.myform.email.value.trim();
+            let number = document.myform.number.value.trim();
+
+            // Name validation
+            if (!/^[A-Za-z ]+$/.test(name) || name.length < 6) {
+                alert("Name must contain only alphabets and be at least 6 characters long.");
+                return false;
+            }
+
+            // Password validation
+            if (password.length < 6) {
+                alert("Password should not be less than 6 characters.");
+                return false;
+            }
+
+            // Email validation
+            if (email === "" || !email.includes("@")) {
+                alert("Enter a valid email ID.");
+                return false;
+            }
+
+            // Phone number validation
+            if (!/^[0-9]{10}$/.test(number)) {
+                alert("Phone number must be 10 digits.");
+                return false;
+            }
+            // Gender validation
+            if (!document.myform.sex.value) {
+                alert("Please select your gender.");
+                return false;
+            }
+
+            // Language validation
+           
+            if (langs.length === 0) {
+                alert("Select at least one language.");
+                return false;
+            }
+
+            // DOB validation
+            if (document.myform.date.value === "" ||
+                document.myform.month.value === "" ||
+                document.myform.year.value === "") {
+                alert("Please select complete Date of Birth.");
+                return false;
+            }
+
+            alert("Registration Successful!");
+            return true;
+        }
+       
+
+document.getElementById("registerForm").addEventListener("submit", async function(e) {
+    e.preventDefault();
+    const sex = document.querySelector('input[name="sex"]:checked')?.value;
+    const languages = [...document.querySelectorAll('input[name="lang"]:checked')]
+                  .map(el => el.value);
+    const date = document.getElementById("date").value;
+    const month = document.getElementById("month").value;
+    const year = document.getElementById("year").value;
+
+    
+    const userData = {
+        name: document.getElementById("name").value,
+        email: document.getElementById("email").value,
+        password: document.getElementById("password").value,
+        phone: document.getElementById("phone").value,
+        sex: sex,
+        language: languages[0],
+        address: document.getElementById("address").value
+    };
+
+    const response = await fetch("http://localhost:8080/api/auth/register", {
+        method: "POST",
+        headers: {
+            "Content-Type": "application/json"
+        },
+        body: JSON.stringify(userData)
+    });
+
+    const data = await response.json();
+
+     if (response.ok) {
+        alert("Registration Successful");
+
+        localStorage.setItem("token", data.token);
+        localStorage.setItem("email", userData.email);   
+        document.getElementById("registerForm").reset();
+        window.location.href = "Phising.html";
+    } else {
+        alert(data.message);
+    }
+});
+
+
+    </script>
+</body>
+
+</html>
